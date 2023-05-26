@@ -1,0 +1,19 @@
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background-color: black;
+}
+#canvas{
+   position: absolute;
+   top:0;
+   left:0;
+
+}
+.quantity-balls{
+  position: absolute;
+  top:0;
+  left:50%;
+  z-index: 10;
+  margin: 30px;
+}
