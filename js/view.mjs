@@ -15,12 +15,13 @@ export class Visualization extends Figure {
    }
 
    renderCircle () { 
-         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+         
          this.ctx.beginPath();
          this.ctx.fillStyle = `hsl(${this.x*0.5}, 100%, 50%`
          this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
          
          this.ctx.fill();
+         // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
    }
    
    circleMove () {

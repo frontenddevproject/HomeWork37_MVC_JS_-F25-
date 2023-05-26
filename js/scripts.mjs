@@ -10,3 +10,4 @@ import { Balls } from "./controller.mjs";
 // }
 // animate();
 const balls = new Balls();
+balls.createBalls();
