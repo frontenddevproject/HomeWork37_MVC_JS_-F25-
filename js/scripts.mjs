@@ -5,9 +5,10 @@ const ctx = canvas.getContext("2d");
 
 
 const balls = new Balls();
- function animate () {
+
+function animate () {
    ctx.clearRect(0, 0, canvas.width, canvas.height)
    balls.handleBalls();
    requestAnimationFrame(animate);
- }
+}
 animate();
