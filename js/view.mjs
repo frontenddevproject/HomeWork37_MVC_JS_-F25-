@@ -1,16 +1,15 @@
 import { Figure} from "./model.mjs";
-
 export class Visualization extends Figure {
    constructor (canvas, radius) {
       super(radius);
-      this.canvas = document.querySelector("#canvas");
+      this.canvas = canvas;
       this.ctx = canvas.getContext("2d");
       this.canvas.width = window.innerWidth;
       this.canvas.height = window.innerHeight
       this.x = this.radius + Math.random() * (canvas.width -this.radius * 2);
       this.y = this.radius + Math.random() * (canvas.height -this.radius * 2);
-      this.speedX = Math.random() * 5;
-      this.speedY = Math.random() * 5;
+      this.speedX = Math.random() * 5 + 1;
+      this.speedY = Math.random() * 5 + 1;
    }
 
    renderCircle () { 

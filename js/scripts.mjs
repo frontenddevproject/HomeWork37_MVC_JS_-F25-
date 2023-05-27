@@ -1,9 +1,8 @@
 import { Balls } from "./controller.mjs";
-export const canvas = document.querySelector("#canvas");
-export const ctx = canvas.getContext("2d");
+export const inputField = document.getElementById("input-field");
+const canvas = document.querySelector("#canvas");
+const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 
 const balls = new Balls();
  function animate () {
