@@ -1,21 +1,19 @@
 import { Visualization } from "./view.mjs";
-import { inputField } from "./scripts.mjs";
 
 export class Balls {
-   constructor() {
+   constructor(quantityOfBalls) {
+      this.quantityOfBalls = quantityOfBalls;
       this.ballsArray = [];
       this.createBalls();
    }
 
    createBalls () {
-      let ballsOnScreen = 0;
-      inputField.oninput = (event) => {
          this.ballsArray = [];
-         event.target.value <= 100 ? ballsOnScreen = event.target.value : 100;
+         let ballsOnScreen = 0;
+         this.quantityOfBalls <= 100 ? ballsOnScreen = this.quantityOfBalls : ballsOnScreen = 100;
          for (let i = 0; i < ballsOnScreen; i++) {
             this.ballsArray.push(new Visualization(canvas));
          }
-      }
    }
 
    handleBalls() {

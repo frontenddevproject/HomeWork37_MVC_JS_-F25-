@@ -1,4 +1,5 @@
 import { Figure} from "./model.mjs";
+
 export class Visualization extends Figure {
    constructor (canvas, radius) {
       super(radius);
@@ -8,8 +9,8 @@ export class Visualization extends Figure {
       this.canvas.height = window.innerHeight;
       this.x = this.radius + Math.random() * (canvas.width -this.radius * 2);
       this.y = this.radius + Math.random() * (canvas.height -this.radius * 2);
-      this.speedX = Math.random() * 5 + 1;
-      this.speedY = Math.random() * 5 + 1;
+      this.speedX = Math.random() * 5;
+      this.speedY = Math.random() * 5;
       this.resizeWindow();
    }
 
@@ -25,7 +26,7 @@ export class Visualization extends Figure {
       if (this.x > this.canvas.width - this.radius || this.x < this.radius) {
          this.speedX *= -1;
       }
-      this.y += this.speedY;
+      this.y -= this.speedY;
       if (this.y > this.canvas.height - this.radius || this.y < this.radius) {
          this.speedY *= -1;
       }
