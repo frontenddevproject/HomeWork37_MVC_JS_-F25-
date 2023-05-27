@@ -5,11 +5,12 @@ export class Visualization extends Figure {
       this.canvas = canvas;
       this.ctx = canvas.getContext("2d");
       this.canvas.width = window.innerWidth;
-      this.canvas.height = window.innerHeight
+      this.canvas.height = window.innerHeight;
       this.x = this.radius + Math.random() * (canvas.width -this.radius * 2);
       this.y = this.radius + Math.random() * (canvas.height -this.radius * 2);
       this.speedX = Math.random() * 5 + 1;
       this.speedY = Math.random() * 5 + 1;
+      this.resizeWindow();
    }
 
    renderCircle () { 
@@ -29,5 +30,12 @@ export class Visualization extends Figure {
          this.speedY *= -1;
       }
    }
-
+   resizeWindow () {
+      window.addEventListener("resize", () => {
+         this.canvas.width = window.innerWidth;
+         this.canvas.height = window.innerHeight;
+         this.x = this.radius + Math.random() * (canvas.width -this.radius * 2);
+         this.y = this.radius + Math.random() * (canvas.height -this.radius * 2);
+      })
+   }
 }
